@@ -1,0 +1,41 @@
+html {
+     font-size: 50pt;
+}
+
+
+body {
+    background-color: paleturquoise;
+    width: auto;
+    font-size: 3rem;
+    width: 100vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 0.2em;
+}
+
+p {
+    color: rgba(255, 0, 0, 0.5);
+    width: 80vw;
+    font-size: 0.2rem;
+}
+a {
+    color: inherit;
+    font-size: initial;
+}
+
+li {
+    font-size: 0.3rem;
+}
+
+div {
+    padding: calc(1rem + 1vw);
+    color: rgba(255, 0, 0, 0.5);
+    width: 80vw;
+    font-size: 0.2rem;
+}
+
+.kk {
+    font-size: 0.3rem;
+}

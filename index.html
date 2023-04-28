@@ -5,15 +5,63 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <link rel="icon" href="#" />
+        <link rel="stylesheet" href="../lokispace/cssdemo/style mainpage.css">
+        <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>
+        <style>
+        h1 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 46px;
+            margin: 30px;
+        }
+        .ep{
+            display: inline-block;
+            background-color: rgba(181, 109, 200, 0.646);
+            height: 40px;   
+        }
+        p{
+            margin:8px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+        }
+        #ep1{
+            position: absolute;
+            left: 125px;
+            top: 130px;
+        }
+        #ep2{
+            position:absolute ;
+            left: 80px;
+            top: 325px;
+        }
+        #ep3{
+            position:absolute ;
+            left: 230px;
+            top: 425px;
+        }
+        #ep4{
+            position:absolute ;
+            left: 350px;
+            top: 600px;
+        }
+        </style>
     </head>
-    <body>
-        
-        <h4>Tap here</h4>
-        <ul>
-            <li><a href="html-exercise/index.html">html page </a></li>
-            <li><a href="css-exercise/index.html">css page </a></li>
-            <li><a href="java-execise/index.html">java page </a></li>
-      </ul>   
+
+    <body background="assests/image/bg.png" style="background-size: 100% 100%;background-attachment: fixed;">
+        <h1 style="text-align: right;">LOKI SPACE</h1>
+       
+       <div class="ep" id="ep1">
+         <p> EP1.<a href="html-exercise/index.html" >HTML PAGE</a></p>
+       </div>
+       <div class="ep" id="ep2">
+         <p>EP2.<a href="../lokispace/css-exercise/" >CSS PAGE</a></p>
+      </div>
+      <div class="ep" id="ep3">
+         <p>EP3.<a href="java-execise/index.html" >JAVA PAGE</a></p>
+      </div>
+      <div class="ep" id="ep4">
+         <p>EP4.ABOUT ME</p>
+      </div>
+      
         
     </body>
 </html>
