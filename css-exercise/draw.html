@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>写生</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="icon" href="#" />
+        <style>
+            h1{
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 72px;
+                margin: 45px;
+            }
+            a{
+                position: absolute;
+                transform: translate(1355px,560px) 
+            }
+            /* 橘子 */
+            #orange1{
+                position: absolute;
+                width: 13%;
+                height: 20%;
+                background-color: #ff7627;
+                transform: translate(220px,480px);
+                z-index: 3;
+                /* 圆形设置 */
+                border-radius: 165px 200px 145px 138px;
+                border: 1px solid #ff4d00;
+            }   
+            #orange2{
+                position: absolute;
+                width: 13%;
+                height: 20%;
+                background-color: #e55602;
+                transform: translate(500px,460px);
+                z-index: 3;
+                /* 圆形设置 */
+                border-radius: 110px 110px 140px 124px;
+                border: 1px solid #ff4d00;
+            }   
+            #orange3{
+                position: absolute;
+                width: 10%;
+                height: 18%;
+                background-color: #f3610c;
+                transform: translate(530px,360px);
+                z-index: 3;
+                /* 圆形设置 */
+                border-radius: 149px 154px 143px 180px;
+                border: 1px solid #ff4d00;
+            }   
+            #orange4{
+                position: absolute;
+                width: 13%;
+                height: 21%;
+                z-index: 3;
+                background-color: #ff5e00;
+                transform: translate(650px,500px);
+                /* 圆形设置 */
+                border-radius: 149px 140px 143px 140px;
+                border: 1px solid #ff4d00;
+            }  
+           
+            /* 花瓶 */
+            #up{
+                position: absolute;
+                transform: translate(900px,250px);
+                width: 0;
+                height: 0;
+                z-index: 5;
+                border-style: solid;
+                border-width: 360px 100px 0 100px;
+                border-color: #00ff77 transparent transparent transparent;
+            }
+            #mid{
+                position: absolute;
+                width: 180px;
+                height: 180px;
+                z-index: 5;
+                background-color: #00ff77;
+                transform: translate(910px,430px);
+                /* 圆形设置 */
+                border-radius: 200px 200px 200px 200px;
+            }  
+            #down{
+                position: absolute;
+                transform: translate(905px,550px);
+                width: 0;
+                height: 0;
+                z-index: 5;
+                border-style: solid;
+                border-width: 0 95px 100px 95px;
+                border-color: transparent transparent #00ff77 transparent;
+            }
+            #st1{
+                position: absolute;
+                z-index: 4;
+                width: 13px;
+                height: 300px;
+                background-color: #000000;
+                transform: translate(1000px,2px) rotate(6deg);
+            }
+            #st2{
+                position: absolute;
+                z-index: 2;
+                width: 13px;
+                height: 290px;
+                background-color: #323232;
+                transform: translate(1020px,5px) rotate(3deg);
+            }
+            #st3{
+                position: absolute;
+                z-index: 4;
+                width: 11px;
+                height: 300px;
+                background-color: #6c6c6c;
+                transform: translate(1042px,5px) rotate(10deg);
+            }
+            #st4{
+                position: absolute;
+                z-index: 4;
+                width: 15px;
+                height: 300px;
+                background-color: #000000;
+                transform: translate(954px,3px) rotate(-14deg);
+            }
+            #st5{
+                position: absolute;
+                z-index: 4;
+                width: 12px;
+                height: 300px;
+                background-color: #2c2c2c;
+                transform: translate(985px,0px) rotate(-4deg);
+            }
+            
+            /* 玻璃瓶 */
+            #g1{
+                position: absolute;
+                z-index: 8;
+                width: 100px;
+                height: 220px;
+                background-color: #81c0e59a;
+                border:4px solid #237181bc;
+                transform: translate(1100px,455px) 
+            }
+            #g2{
+                position: absolute;
+                z-index: 8;
+                width: 40px;
+                height: 220px;
+                background-color: #81c0e59a;
+                border:4px solid #237181bc;
+                transform: translate(1054.5px,447px) skewY(18deg)
+            } 
+            #g3{
+                position: absolute;
+                z-index: 8;
+                width: 50px;
+                height: 220px;
+                background-color: #81c0e59a;
+                border:4px solid #237181bc;
+                transform: translate(1205px,448.4px) skewY(-14deg)
+            }
+            #g4{
+                position: absolute;
+                z-index: 2;
+                width: 209px;
+                height: 30px;
+                background-color: #81c0e59a;
+                transform: translate(1054.5px,430px) 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="orange">
+            <div class="circle" id="orange1"></div>
+            <div class="circle" id="orange2"></div>
+            <div class="circle" id="orange3"></div>
+            <div class="circle" id="orange4"></div>
+         </div> 
+        <div id="vase">
+            <div id="up"></div>
+            <div id="stick">
+                <div id="st1"></div>
+                <div id="st2"></div>
+                <div id="st3"></div>
+                <div id="st4"></div>
+                <div id="st5"></div>
+            </div>
+            <div id="mid"></div>
+            <div id="down"></div>
+        </div>
+        <div id="glass">
+            <div id="g1"></div>
+            <div id="g2"></div>
+            <div id="g3"></div>
+            <div id="g4"></div>
+            <div id="g5"></div>
+            <div id="g6"></div>
+        </div>
+        <h1>Let's painting!</h1>
+        <p><a href="index.html">back</a></p>
+
+    </body>
+</html>
