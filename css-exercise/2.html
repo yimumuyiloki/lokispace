@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Css layout</title>
+      <style>
+            h1{
+                margin: auto;
+                text-align: center;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            .flex-container {
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                flex-wrap: wrap;
+            }
+            .flex-item {
+            background-color: #FF6384; 
+            color: #fff; 
+            font-size: 20px; 
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            flex-basis: 200px;
+            }
+            #d2{
+                transform: translate(0px,60px);
+            }
+            #d3{
+                transform: translate(0px,-40px);
+            }
+            #d4{
+                transform: rotate(50deg);
+            }
+            #d5{
+                transform: scale(1.5,1.5);
+            }
+            #d6{
+                transform: scale(0.3,0.5);
+            }
+            #d7{
+                transform: skewY(20deg)
+            }
+            #d8{
+                transition-property: background-color 1s;
+            }
+           #d8:hover{
+            background-color: rgb(255, 255, 255);
+           }
+        </style>
+    </head>
+    <body>
+        <h1>2.Css layout</h1>
+        <div class="flex-container">
+            <div class="flex-item">This</div>
+            <div class="flex-item">is</div>
+            <div class="flex-item">a</div>
+            <div class="flex-item">flexbox</div>
+        </div>
+        <br>
+        <br>
+        <div class="flex-container">
+            <div class="flex-item" id="d1">I</div>
+            <div class="flex-item" id="d2">get down</div>
+            <div class="flex-item" id="d3">and up</div>
+            <div class="flex-item" id="d4">to rotate</div>
+        </div>
+        <br>
+        <br>
+        <div class="flex-container">
+            <div class="flex-item" id="d5">big</div>
+            <div class="flex-item" id="d6">small</div>
+            <div class="flex-item" id="d7">skew</div>
+            <div class="flex-item" id="d8">disappear</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <a href="3.html">next</a><br>
+        <a href="1.html">last one</a><br>
+       <a href="index.html">back to menu</a>
+    
+    </body>
+</html>

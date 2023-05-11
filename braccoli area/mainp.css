@@ -1,0 +1,188 @@
+/* 文本内容 */
+body{
+    background-color: #ffbea0;
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: right;
+}
+#t1{
+    font-size: 100px;
+    position: inherit;
+    color: white;
+
+}
+#t2{
+    font-size: 100px;
+    position: inherit;
+    transform: translateY(-50px);
+    color: white;
+}
+#t3{
+    font-size: 210px;
+    position: inherit;
+    transform: translateY(90px);
+    color: white;
+}
+#t4{
+    font-size: 210px;
+    position: inherit;
+    transform: translateY(0px);
+    color: white;
+}
+#p1{
+    font-size: 50px;
+    position: absolute;
+    transform: translate(0px,-830px) ;
+    color: white;
+    z-index: 4;
+}
+#p2{
+    font-size: 50px;
+    position: absolute;
+    transform: translate(0px,-550px) ;
+    color: white;
+    z-index: 4;
+}
+#p3{
+    font-size: 50px;
+    position: absolute;
+    transform: translate(0px,-200px) ;
+    color: white;
+    z-index: 4;
+}
+
+
+/* 图片内容 */
+.pic{
+    width: 400px;
+}
+.pic2{
+    width: 100px;
+}
+#look{
+    position: fixed;
+    text-align: center;
+    top: 130px;
+    left: 530px;
+    z-index: 0;
+    animation-duration: 2s;
+    animation-name: none1;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+#lookup{
+    position: fixed;
+   text-align: center;
+    top: 130px;
+    left: 530px;
+    z-index: 1;
+    animation-duration: 4s;
+    animation-name: none2;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+
+}
+#lookdown{
+    position: fixed;
+   text-align: center;
+    top: 130px;
+    left: 530px;
+    z-index: 2;
+    animation-duration: 5s;
+    animation-name: none3;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+#lookleft{
+    position: fixed;
+   text-align: center;
+    top: 130px;
+    left: 530px;
+    z-index: 3;
+    animation-duration: 8s;
+    animation-direction: normal;
+    animation-name: none4;
+    animation-iteration-count: infinite;
+}
+#lookright{
+    position: fixed;
+   text-align: center;
+    top: 130px;
+    left: 530px;
+    z-index: 4;
+    animation-duration: 12s;
+    animation-name: none5;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+#b1{
+    position: absolute;
+    transform: translate(-140px,-1050px) ;
+    z-index: 1;
+}
+#b2{
+    position: absolute;
+    transform: translate(-200px,-695px) rotate(100deg);
+    z-index: 1;
+}
+#b3{
+    position: absolute;
+    transform: translate(-130px,-245px) rotate(35deg);
+    z-index: 1;
+}
+/* 动画 */
+@keyframes none1{
+    form{
+        z-index: 0;
+    }
+    to{
+        z-index: 8;
+    }
+}
+@keyframes none2{
+    form{
+        z-index: 1;
+    }
+    to{
+        z-index: 8;
+    }
+}
+@keyframes none3{
+    form{
+        z-index: 2;
+    }
+    to{
+        z-index: 8;
+    }
+}
+@keyframes none4{
+    form{
+        z-index: 3;
+    }
+    to{
+        z-index: 8;
+    }
+}
+@keyframes none5{
+    form{
+        z-index: 4;
+    }
+    to{
+        z-index: 8;
+    }
+}
+#b1:hover{
+    animation-name: rotate ;
+    animation-duration: 0.5s;
+    animation-direction: normal;
+}
+@keyframes rotate {
+    form{
+        transform: rotate(140deg);
+    }
+    to{
+        transform: rotate(10deg);
+    }
+}
