@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>📕bRa.MeNu</title>
+    <!-- include matter.js -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.14.2/build/matter.min.js"></script>
+    <style>
+      #myCanvas {
+        position: absolute;
+        top: calc(50% - 375px);
+        left: calc(50% - 700px);
+        z-index: 3;
+      }
+      @font-face{
+        font-family: 'Noto Sans cjk Bk';
+        src: url('../assests/font/Noto_Sans_SC/NotoSansSC-Black.otf')format('truetype');
+      }
+      body{
+        background-color: #ffbea0;
+      }
+      h1{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: white;
+        font-weight: 100;
+        text-align: right;
+        font-size: 200px;
+        margin: 0%;
+        transform: translateY(-40px);
+        z-index: 10;
+      }
+      
+      p{
+        font-size: 90px;
+        font-family: Noto Sans cjk Bk;
+        position: absolute;
+        top: 260px;
+        color: white;
+        font-weight: 100;
+      }
+      a{
+        text-decoration:none ;
+        color: white;
+      }
+      a:hover{
+        color: rgb(16, 139, 104);
+        text-decoration:underline;
+      }
+      a:after{
+        color: rgb(133, 149, 136);
+      }
+      #a1{
+        font-size: 30px;
+        position: absolute;
+        transform: translate(0px,-240px);
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 300;
+        z-index: 10;
+      }
+      #a2{
+        font-size: 50px;
+        color: white;
+        position: absolute;
+        top: 180px;
+        left: 622px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+        z-index: 10;  
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div id="myCanvas"></div>
+    <!-- your JavaScript code goes here -->
+    <script>
+      // module aliases
+      var Engine = Matter.Engine,
+        Render = Matter.Render,
+        World = Matter.World,
+        Bodies = Matter.Bodies;
+
+      // create an engine
+      var engine = Engine.create();
+
+      // create a renderer
+      var render = Render.create({
+        element: document.getElementById("myCanvas"),
+        engine: engine,
+        options: {
+          wireframes: false,
+          width: 1400,
+          height: 750,
+          background: "transparent",
+        },
+      });
+
+      // create seven boxes
+      var boxA = Bodies.circle(400, 200, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxB = Bodies.circle(500, 50, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxC = Bodies.circle(600, 100, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxD = Bodies.circle(700, 145, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxE = Bodies.circle(800, 200, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxF = Bodies.circle(900, 250, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxG = Bodies.circle(1000, 145, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxH = Bodies.circle(950, 100, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      var boxI = Bodies.circle(850, 200, 145, {
+        render: {
+          sprite: {
+            texture: "./assest/img/broccoli.png",
+            xScale: 0.16,
+            yScale: 0.16,
+          },
+        },
+      });
+      // create ground
+      var ground = Bodies.rectangle(500, 765, 1410, 30, {
+        isStatic: true,
+        render: {
+          fillStyle: "transparent",
+          strokeStyle: "transparent",
+          opacity: 0,
+        },
+      });
+      var leftWall = Bodies.rectangle(0, 500, 1, 1000, {
+        isStatic: true,
+        render: {
+          fillStyle: "transparent",
+          strokeStyle: "transparent",
+          opacity: 0,
+        },
+      });
+      var rightWall = Bodies.rectangle(1400, 500, 1, 1000, {
+        isStatic: true,
+        render: {
+          fillStyle: "transparent",
+          strokeStyle: "transparent",
+          opacity: 0,
+        },
+      });
+
+      // add all of the bodies to the world
+      World.add(engine.world, [
+        boxA,
+        boxB,
+        boxC,
+        boxD,
+        boxE,
+        boxF,
+        boxG,
+        boxH,
+        boxI,
+        ground,
+        leftWall,
+        rightWall,
+      ]);
+      var mouse = Matter.Mouse.create(render.canvas);
+      var mouseConstraint = Matter.MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false,
+          },
+        },
+      });
+      World.add(engine.world, mouseConstraint);
+
+      // add mouse click event to remove boxes
+      Matter.Events.on(mouseConstraint, "mousedown", function (event) {
+        var mousePosition = event.mouse.position;
+        Matter.Query.point(
+          [boxA, boxB, boxC, boxD, boxE, boxF, boxG,boxH,boxI],
+          mousePosition
+        ).forEach(function (box) {
+          Matter.World.remove(engine.world, box);
+        });
+      });
+      // run the engine
+      Engine.run(engine);
+
+      // run the renderer
+      Render.run(render);
+    </script>
+    <h1>bRa.MeNu</h1>
+    
+    <div id="a1"><a  href="./项目/1.重庆公寓.html">1.🏨</a><br>
+    <a href="./项目/2.创造与毁灭之海.html">2.💧</a><br>
+    <a href="./项目/3.往生迪斯科.html">3.💃</a><br>
+    <a href="./项目/4.限.html">4.🚫</a><br>
+    <a href="./项目/5.刺.html">5.🚮</a><br>
+    <a href="./项目/6.社区跳房子.html">6.🏠</a><br>
+    <a href="./项目/7.破茧.html">7.🦋</a><br>
+    <a href="./项目/8.碎片.html">8.📸</a><br></div>
+    <br><a id="a2" href="./index.html">bAcK tO MaInpAge</a>
+    <p>1.重庆公寓 2.创造与毁灭之海 3.往生迪斯科 4.限 5.刺 6.社区跳房子 7.破茧 8.——碎片</p>
+  </body>
+</html>

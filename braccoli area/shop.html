@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.12.0.min.js"></script>
+</head>
+<body>
+    
+    <div style="height: 200px; background: #999"></div>
+
+    <!-- 固定元素悬浮后，原来所在的位置会被空缺（height变成0），
+    导致页面闪跳且计算不准，所以必须设置一个确定高度的div框住 -->
+    <div style="height:300px;">
+        <div class="fixed" style="height: 300px; background: green; text-align: center;">滚动悬浮块</div>
+    </div>
+
+    <div style="height:400px;background: #999"></div>
+    <div class="bottom" style="height: 500px; background: red; text-align: center;">结束滚动块</div>
+    <div style="height:800px; background: #999"></div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        
+        $(function() {
+            var fix = $('.fixed');                      //滚动悬浮块
+            var end = $('.bottom');                     //滚动到这个元素后结束固定
+            var fixTop = fix.offset().top,              //滚动悬浮块与顶部的距离
+                fixHeight = fix.height();               //滚动悬浮块高度
+            var endTop, miss;                           //结束元素与顶部的距离
+        
+            $(window).scroll(function() {
+                //页面与顶部高度
+                var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+        
+                //如果有结束块
+                if (end.length > 0) {
+                    endTop = end.offset().top;
+                    miss = endTop - docTop - fixHeight;
+                }
+        
+                if (fixTop < docTop) {
+                    fix.css({'position': 'fixed'});
+                    if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+                        fix.css({top: miss});           //滚动悬浮块滑到结束块上时，top值为负，即慢慢隐藏出浏览器
+                    } else{
+                        fix.css({top: 0});              //滚动悬浮块未到结束块上时，top为0
+                    }
+                } else {
+                    fix.css({'position': 'static'});
+                }
+            })
+        });
+    });
+        </script>
+    
+</body>
+</html>
